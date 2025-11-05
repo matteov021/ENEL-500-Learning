@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
 
 namespace ConsoleApp
 {
@@ -31,6 +30,8 @@ namespace ConsoleApp
             Console.WriteLine($"{firstNumber} * {secondNumber} = {product}");
             Console.WriteLine($"{firstNumber} / {secondNumber} = {quotient}");
             Console.WriteLine($"The larger number is {max}");
+            Console.WriteLine($"Is the number 4 even? {isEven(4)}");
+            Console.WriteLine($"Is the number 5 even? {isEven(5)}");
 
         }
 
@@ -73,6 +74,12 @@ namespace ConsoleApp
             }
 
             return secondNumber;
+        }
+
+        // IsEven Method
+        static bool isEven(int n) 
+        { 
+            return n % 2 == 0;
         }
 
     }
