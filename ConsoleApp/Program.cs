@@ -14,7 +14,8 @@ namespace ConsoleApp
             // Step06_ArraysAndLists.Run();
             // Step07_Strings.Run();
             // Step08_EnumsAndStructs.Run();
-            Step09_ClassesAndObjects.Run();
+            // Step09_ClassesAndObjects.Run();
+            Step10_InheritancePolymorphism.Run();
 
             Console.WriteLine("\nPress any key to exit...");
             Console.ReadKey();

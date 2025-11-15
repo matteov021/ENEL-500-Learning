@@ -3,6 +3,51 @@
 namespace ConsoleApp
 {
 
+    public class Dog
+    {
+        private string _name;
+        private string _breed;
+        private int _age;
+
+        // Constructor
+        public Dog(string name, int age, string breed)
+        {
+            _name = name;
+            _age = age;
+            _breed = breed;
+        }
+
+        // Method to make the dog bark
+        public void Bark()
+        {
+            Console.WriteLine($"{_name} says: Woof! Woof!");
+        }
+        // Method to display dog's info
+        public void DisplayInfo()
+        {
+            Console.WriteLine($"Name: {_name}, Age: {_age} years old, Breed: {_breed}");
+        }
+    }
+
+    public class Person
+    {
+        private string _name;
+        private int _age;
+        
+        // Constructor
+        public Person(string name, int age)
+        {
+            _name = name;
+            _age = age;
+        }
+        
+        // Method to display person's info
+        public void Introduce()
+        {
+            Console.WriteLine($"Hi, my name is {_name} and I'm {_age} years old.");
+        }
+    }
+
     public class BankAccount 
     { 
         private string _owner;
@@ -16,13 +61,13 @@ namespace ConsoleApp
         }
 
         // Read-only property for owner
-        public string Owner 
+        public string Owner
         {
             get { return _owner; }
         }
 
         // Read-only property for balance
-        public double Balance 
+        public double Balance
         {
             get { return _balance; }
         }
@@ -81,6 +126,22 @@ namespace ConsoleApp
             Console.WriteLine();
             account1.DisplayAccountInfo();
             account2.DisplayAccountInfo();
+
+            Console.WriteLine($"{Environment.NewLine}=== PERSON DEMO ===");
+
+            Person person1 = new Person("Charlie", 30);
+            Person person2 = new Person("Diana", 25);
+            person1.Introduce();
+            person2.Introduce();
+
+            Console.WriteLine($"{Environment.NewLine}=== DOG DEMO ===");
+
+            Dog dog1 = new Dog("Buddy", 3, "Golden Retriever");
+            Dog dog2 = new Dog("Max", 5, "Beagle");
+            dog1.Bark();
+            dog2.Bark();
+            dog1.DisplayInfo();
+            dog2.DisplayInfo();
 
         }
     }
