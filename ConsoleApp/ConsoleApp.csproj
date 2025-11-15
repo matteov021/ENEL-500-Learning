@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Step10_InheritancePolymorphism.cs~RFb0b06.TMP" />
+  </ItemGroup>
+
 </Project>
