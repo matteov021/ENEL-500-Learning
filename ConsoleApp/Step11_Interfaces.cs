@@ -13,6 +13,11 @@ namespace ConsoleApp
         void Speak();
     }
 
+    public interface IEatable 
+    {
+        void Eat();
+    }
+
     public class Robot : IMovable, ISpeakable
     {
         public string Name { get; private set; }
@@ -33,7 +38,7 @@ namespace ConsoleApp
         }
     }
 
-    public class Human : IMovable, ISpeakable
+    public class Human : IMovable, ISpeakable, IEatable
     {
         public string Name { get; private set; }
 
@@ -50,6 +55,11 @@ namespace ConsoleApp
         public void Speak()
         {
             Console.WriteLine($"{Name} says: 'Hello!'");
+        }
+
+        public void Eat()
+        {
+            Console.WriteLine($"{Name} is eating food.");
         }
     }
 
@@ -88,6 +98,12 @@ namespace ConsoleApp
                 new Human("Bob")
             };
 
+            IEatable[] eatingThings = new IEatable[]
+            {           
+                new Human("Bob"),
+                new Human("Alice")
+            };
+
             Console.WriteLine($"{Environment.NewLine}--- Movable Things ---");
             foreach (var m in movables)
             {
@@ -98,6 +114,12 @@ namespace ConsoleApp
             foreach (var s in speakingThings)
             {
                 s.Speak();
+            }
+
+            Console.WriteLine($"{Environment.NewLine}--- Eating Things ---");
+            foreach (var s in eatingThings)
+            {
+                s.Eat();
             }
         }
     }
